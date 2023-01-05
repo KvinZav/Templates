@@ -3,7 +3,7 @@
 ```bash
 nvm use
 npm install
-npm run dev
+npm run start
 ```
 
 # Environments
