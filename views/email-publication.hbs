@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
+  <title>Email Publication Live</title>
+</head>
+<body>
+
+<style>
+
+  * {
+    margin: 0px;
+    padding: 0px;
+
+    font-family: 'Manrope', sans-serif;
+    
+    box-sizing: border-box;
+  }
+
+  body {
+    background: rgba(155, 219, 213, 0.12);
+    width:100%;
+    heigth: 100%;
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  .flex-column {
+    flex-direction: column;
+  }
+
+  .gap-1 {
+    gap: 12px;
+  }
+
+  .gap-2 {
+    gap: 24px;
+  }
+
+  .w-100 {
+    width: 100%;
+  }
+
+  .container {
+    position: relative;
+
+    max-width: 640px;
+    margin: auto;
+    margin-top: 124px;
+    padding: 72px;
+    
+    background: #FBFBFB;
+  }
+
+  img.shape {
+    position: absolute;
+    right: 0;
+    top: 158px;
+  }
+
+
+  .logo {
+    width: 240px;
+    margin-bottom: 56px;
+  }
+
+  .circle {
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+
+    background:#63BEB6;
+    border-radius: 50%;
+  }
+
+  .circle.small {
+    width: 24px;
+    height: 24px;
+  }
+
+  .date-header {
+    align-items: center;
+    
+    margin-bottom: 24px;
+    
+    color:#63BEB6;
+    
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+  .date-header .circle {
+    margin-right: 8px;
+  }
+
+  .title h1 {
+    width: 450px;
+
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 35px;
+  }
+
+  .message-contain {
+    margin-top: 56px;
+  }
+
+  .message-contain h2 {
+    margin-bottom: 16px;
+
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+  .message-contain p {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  .message-contain p .info {
+    color: #767676;
+  }
+
+  .event {
+    margin: 32px 0;
+  }
+
+  .event-indicator {
+    position: relative;
+
+    width: 24px;
+    margin-right: 24px;
+  }
+
+  .event-indicator .indicator {
+    position: absolute;
+    top: 24px;
+    right: 50%;
+
+    width: 1px;
+    height: calc(100% - 24px);
+
+    background: #63BEB6;
+  }
+
+  .event-contain .title .name {
+    color: #63BEB6;
+
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+  .event-contain .title .date {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+  }
+
+  .event-contain .social-media p {
+    color: #767676;
+    margin-right: 12px;
+  }
+
+  .social-networks img {
+    width: 16px; 
+  }
+
+  .divider {
+    width: 1px;
+    height: 100%;
+    margin: 0px 16px;
+
+    background: #767676;
+  }
+
+  .contain-divider {
+    width: 100%;
+    height: 1px;
+    margin: 48px 0px;
+
+    background: #ebebeb;
+  }
+
+  .button-link {
+    width: max-content;
+    padding: 10px 16px;
+
+    color: #fff;
+    background: #222525;
+    border-radius: 8px;
+
+    text-decoration: none;
+  }
+
+  .marketing-info {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 25px;
+  }
+  
+
+</style>
+<div class="container">
+  <img src="/assets/shape.svg" alt="" class="shape">
+  <img class="logo" src="/assets/campaign-centric-logo.svg" alt="">
+  <div class="flex w-100 date-header">
+    <div class="flex circle">
+      <img src="/assets/calendar-today.svg" alt="">
+    </div>
+    <span class="date">{{dateFormat publicationDateTime}}.</span>
+  </div>
+  <div class="title">
+    <h1>{{brandName}} - Your publication is live!</h1>
+  </div>
+  <div class="message-contain">
+    <h2>Hey there, {{bussinessOwnerName}}!</h2>
+    <p>Your publication scheduled for today has been launched:</p>
+    <div class="flex event">
+      <div class="event-indicator">
+        <div class="flex circle small">
+          <img src="/assets/verified.svg" alt="">
+        </div>
+        <div class="indicator"></div>
+      </div>
+      <div class="flex gap-1 w-100 flex-column event-contain">
+        <div class="flex title">
+          <h3 class="name">{{publicationName}}</h3>
+          <div class="divider"></div>
+          <h3 class="date">{{hourFormat publicationDateTime}}</h3>
+        </div>
+        <div class="flex social-media">
+          <p>{{publications}} publications</p>
+          <div class="flex gap-1 social-networks">
+            <img src="/assets/facebook.svg" alt="">
+            <img src="/assets/instagram.svg" alt="">
+            <img src="/assets/twitter.svg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <p>If you’ve set up auto-publish, campaign-centric pushed these publications to the social media accounts you chose.
+      <br><br>
+      If you selected a print format, it’s time to publish it.
+      <br><br>
+      For more info about your publication, go to campaign details.
+      <br><br>
+      <span class="info">You can also download your publications, and post them manually. Print publications must be handled manually in your campaign.</span>
+    </p>
+  </div>
+  <div class="contain-divider"></div>
+  <div class="flex gap-2 flex-column">
+    <a class="button-link" href="{{link}}" target="_blank" rel="noopener noreferrer">Go to campaign details</a>
+    <h3 class="marketing-info">Marketing campaigns made easy.</h3>
+  </div>
+</div>
+
+</body>
+</html>
