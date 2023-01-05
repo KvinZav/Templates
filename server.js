@@ -35,7 +35,6 @@ app.get('/', (_, res) => {
     bussinessOwnerName: 'Genea',
     publicationDateTime: '2022-10-20T17:30:00.000Z',
     publicationName: 'Christmas launch',
-    publications: 6,
     link: 'https://www.google.com',
   });
 });
