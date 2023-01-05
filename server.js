@@ -12,11 +12,8 @@ const exphbs = hbs.create({
   layoutsDir: false,
   extname: '.hbs',
   helpers: {
-    dateFormat(date) {
-      return moment(date).format('LL');
-    },
-    hourFormat(date) {
-      return moment(date).format('hh:mm a');
+    dateFormat(date, format) {
+      return moment(date).format(format);
     }
   }
 });
@@ -39,7 +36,7 @@ app.get('/', (_, res) => {
     publicationDateTime: '2022-10-20T17:30:00.000Z',
     publicationName: 'Christmas launch',
     publications: 6,
-    link: 'https://www.google.com'
+    link: 'https://www.google.com',
   });
 });
 

@@ -221,7 +221,7 @@
     <div class="flex circle">
       <img src="/assets/calendar-today.svg" alt="">
     </div>
-    <span class="date">{{dateFormat publicationDateTime}}.</span>
+    <span class="date">{{dateFormat publicationDateTime "LL"}}.</span>
   </div>
   <div class="title">
     <h1>{{brandName}} - Your publication is live!</h1>
@@ -240,7 +240,7 @@
         <div class="flex title">
           <h3 class="name">{{publicationName}}</h3>
           <div class="divider"></div>
-          <h3 class="date">{{hourFormat publicationDateTime}}</h3>
+          <h3 class="date">{{dateFormat publicationDateTime "hh:mm a"}}</h3>
         </div>
         <div class="flex social-media">
           <p>{{publications}} publications</p>
