@@ -9,9 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
   <title>Email Publication Live</title>
 </head>
-<body>
-
-<style>
+<style type="text/css">
 
   * {
     margin: 0px;
@@ -207,12 +205,14 @@
   
 
 </style>
+<body>
+
 <div class="container">
-  <img src="/assets/shape.svg" alt="" class="shape">
+  <img src="{{imagesUrl}}/assets/shape.svg" alt="" class="shape">
   <img class="logo" src="/assets/campaign-centric-logo.svg" alt="">
   <div class="flex w-100 date-header">
     <div class="flex circle">
-      <img src="/assets/calendar-today.svg" alt="">
+      <img src="{{imagesUrl}}/assets/calendar-today.svg" alt="">
     </div>
     <span class="date">{{publicationDateTime.date}}</span>
   </div>
@@ -225,7 +225,7 @@
     <div class="flex event">
       <div class="event-indicator">
         <div class="flex circle small">
-          <img src="/assets/verified.svg" alt="">
+          <img src="{{imagesUrl}}/assets/verified.svg" alt="">
         </div>
         <div class="indicator"></div>
       </div>

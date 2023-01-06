@@ -30,6 +30,7 @@ app.get('/', (_, res) => {
     },
     publicationName: 'Christmas launch',
     link: 'https://www.google.com',
+    imagesUrl: 'http://localhost:3000'
   });
 });
 
