@@ -214,13 +214,13 @@
     <div class="flex circle">
       <img src="/assets/calendar-today.svg" alt="">
     </div>
-    <span class="date">{{dateFormat publicationDateTime "LL"}}</span>
+    <span class="date">{{publicationDateTime.date}}</span>
   </div>
   <div class="title">
     <h1>{{brandName}} - Your publication is live!</h1>
   </div>
   <div class="message-contain">
-    <h2>Hey there, {{bussinessOwnerName}}!</h2>
+    <h2>Hey there, {{businessOwnerName}}!</h2>
     <p>Your publication scheduled for today has been launched:</p>
     <div class="flex event">
       <div class="event-indicator">
@@ -233,7 +233,7 @@
         <div class="flex title">
           <h3 class="name">{{publicationName}}</h3>
           <div class="divider"></div>
-          <h3 class="date">{{dateFormat publicationDateTime "hh:mm a"}}</h3>
+          <h3 class="date">{{publicationDateTime.hour}}</h3>
         </div>
       </div>
     </div>
