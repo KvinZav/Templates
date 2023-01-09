@@ -204,15 +204,15 @@
 
 <div class="container">
   <div class="logo-container">
-    <img class="logo" src="/assets/campaign-centric-logo.svg" alt="">
+    <img class="logo" src="{{imagesUrl}}/public/email/assets/campaign-centric-logo.png" alt="logo">
   </div>
   <div class="flex">
     <div class="left">
       <div class="flex w-100 date-header">
         <div class="flex circle">
-          <img src="{{imagesUrl}}/assets/calendar-today.svg" alt="">
+          <img src="{{imagesUrl}}/public/email/assets/calendar-today.png" alt="calendar">
         </div>
-        <span class="date">{{publicationDateTime.date}}</span>
+        <span class="date">{{publicationDate}}</span>
       </div>
       <div class="title">
         <h1>{{brandName}} - <br> Your publication is live!</h1>
@@ -223,7 +223,7 @@
         <div class="flex event">
           <div class="event-indicator">
             <div class="flex circle small">
-              <img src="{{imagesUrl}}/assets/verified.svg" alt="">
+              <img src="{{imagesUrl}}/public/email/assets/verified.png" alt="verified">
             </div>
             <div class="indicator"></div>
           </div>
@@ -231,13 +231,13 @@
             <div class="flex title">
               <h3 class="name">{{publicationName}}</h3>
               <div class="divider"></div>
-              <h3 class="date">{{publicationDateTime.hour}}</h3>
+              <h3 class="date">{{publicationTime}}</h3>
             </div>
           </div>
         </div>
-        <p>If you’ve set up auto-publish, campaign-centric pushed these publications to the social media accounts you chose.
+        <p>If you've set up auto-publish, campaign-centric pushed these publications to the social media accounts you chose.
           <br><br>
-          If you selected a print format, it’s time to publish it.
+          If you selected a print format, it's time to publish it.
           <br><br>
           For more info about your publication, go to campaign details.
           <br><br>
@@ -246,7 +246,7 @@
       </div>
     </div>
     <div class="right">
-      <img src="{{imagesUrl}}/assets/shape.svg" alt="" class="shape">
+      <img src="{{imagesUrl}}/public/email/assets/shape.png" alt="" class="shape">
     </div>
   </div>
   <div class="contain-divider"></div>
