@@ -1,8 +1,14 @@
 require('dotenv').config();
 const express = require('express');
 const hbs = require('express-handlebars');
+const { compile } = require('handlebars');
 const path = require('path');
+const { resolve } = require('path');
+const { readFileSync } = require('fs');
 const moment = require('moment');
+
+// Mi files
+const { sendEmailAWS } = require('./email');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -32,6 +38,27 @@ app.get('/', (_, res) => {
     link: 'https://www.google.com',
     imagesUrl: 'http://localhost:3000'
   });
+});
+
+app.get('/email', async (_, res ) => {
+  const path = resolve('./views/email-publication-back.hbs');
+  const fileContent = readFileSync(path, 'utf-8');
+  const template = compile(fileContent);
+
+  const body = template({
+    layout: false,
+    brandName: 'Cupcake Extravaganza',
+    businessOwnerName: 'Genea',
+    publicationDate: moment().format('LL'),
+    publicationTime: moment().format('hh:mm a'),
+    publicationName: 'Christmas launch',
+    link: 'https://www.google.com',
+    imagesUrl: 'http://localhost:3000'
+  });
+
+  await sendEmailAWS(body);
+
+  return res.json({ message: 'hello, there' });
 });
 
 app.listen(port, () => {
