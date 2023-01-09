@@ -25,8 +25,8 @@ app.get('/', (_, res) => {
     brandName: 'Cupcake Extravaganza',
     businessOwnerName: 'Genea',
     publicationDateTime: {
-      date: moment('2022-10-20T17:30.000Z').format('LL'),
-      hour: moment('2022-10-20T17:30.000Z').format('hh:mm a'),
+      date: moment().format('LL'),
+      hour: moment().format('hh:mm a'),
     },
     publicationName: 'Christmas launch',
     link: 'https://www.google.com',
